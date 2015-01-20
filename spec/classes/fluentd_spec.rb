@@ -18,6 +18,27 @@ describe 'fluentd' do
 
         it { is_expected.to contain_service('td-agent') }
         it { is_expected.to contain_package('td-agent').with_ensure('present') }
+        
+        it { is_expected.to contain_file('fluentd_config_name').with(
+          'ensure' => 'file',
+          'owner'  => 'td-agent',
+          'group'  => 'td-agent',
+          'mode'   => '0640',
+          'notify' => 'Class[Fluentd::Service]'
+          )
+        }
+        it { is_expected.to contain_file('fluentd_config_dir_d').with(
+          'ensure' => 'directory',
+          'owner'  => 'td-agent',
+          'group'  => 'td-agent',
+          'mode'   => '0755'
+          )
+        }
+        
+        it { is_expected.to contain_file('fluentd_config_name')
+          .with_content("@include config.d/*.conf")
+        }
+        
       end
     end
   end
@@ -29,7 +50,7 @@ describe 'fluentd' do
         :operatingsystem => 'Nexenta',
       }}
 
-      it { expect { is_expected.to contain_package('fluentd') }.to raise_error(Puppet::Error, /Nexenta not supported/) }
+      it { expect { is_expected.to contain_package('td-agent') }.to raise_error(Puppet::Error, /Nexenta not supported/) }
     end
   end
 end

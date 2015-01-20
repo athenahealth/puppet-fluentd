@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "author": "Stas Alekseev",
   "summary": "Manages Fluentd installation and configuration with Puppet.",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "https://github.com/athenahealth/puppet-fluentd.git",
   "project_page": "https://github.com/athenahealth/puppet-fluentd",
   "issues_url": "https://github.com/athenahealth/puppet-fluentd/issues",
