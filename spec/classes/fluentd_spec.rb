@@ -19,6 +19,13 @@ describe 'fluentd' do
         it { is_expected.to contain_service('td-agent') }
         it { is_expected.to contain_package('td-agent').with_ensure('present') }
         
+        it { is_expected.to contain_file('fluentd_config_dir').with(
+          'ensure' => 'directory',
+          'owner'  => 'td-agent',
+          'group'  => 'td-agent',
+          'mode'   => '0755'
+          )
+        }
         it { is_expected.to contain_file('fluentd_config_name').with(
           'ensure' => 'file',
           'owner'  => 'td-agent',
