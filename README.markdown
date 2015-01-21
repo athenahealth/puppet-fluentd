@@ -13,7 +13,7 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves. This is your 30 second elevator pitch for your module. Consider including OS/Puppet version it works with.       
+Manage Fluentd installation and configuration with Puppet on RHEL, CentOS, Debian and Ubuntu.
 
 ## Module Description
 
@@ -25,9 +25,7 @@ If your module has a range of functionality (installation, configuration, manage
 
 ### What fluentd affects
 
-* A list of files, packages, services, or operations that the module will alter, impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form. 
+* Defaults are for td-agent distribution for Fluentd. 
 
 ### Setup Requirements **OPTIONAL**
 

@@ -47,6 +47,19 @@ describe 'fluentd' do
         }
         
       end
+      
+      describe "fluentd class without v0 config on #{osfamily}" do
+        let(:params) {{
+          :config_version => 0,
+        }}
+        let(:facts) {{
+          :osfamily => osfamily,
+        }}
+        
+        it { is_expected.to contain_file('fluentd_config_name')
+          .with_content("include config.d/*.conf")
+        }
+      end
     end
   end
 

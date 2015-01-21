@@ -1,11 +1,39 @@
 # == Class: fluentd
 #
-# Full description of class fluentd here.
+# Manage Fluentd installation and configuration with Puppet.
 #
 # === Parameters
 #
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
+# [*config_version*] (default: 1)
+#   Version of configuration file to use.
+#   See http://docs.fluentd.org/articles/config-file#v1-format for details.
+#
+# [*config_dir*] (default: /etc/td-agent)
+#   Path to the main configuration directory.
+#
+# [*config_dir_d*] (default: /etc/td-agent/config.d)
+#   Path to the configuration directory for dynamic configlets.
+#
+# [*config_dir_d_purge*] (default: true)
+#   Purge configuration directory for dynamic configlets of unmanaged configs.
+#
+# [*config_dir_d_purge_ignore*] (default: undef)
+#   Exclude certain files from being purged.
+#
+# [*config_name*] (default: /etc/td-agent/td-agent.conf)
+#   Path to the main configuration file.
+#
+# [*package_name*] (default: td-agent)
+#   Override the package name.
+#
+# [*service_name*] (default: td-agent)
+#   Override the service name.
+#
+# [*daemon_user*] (default: td-agent)
+#   Override the daemon user.
+#
+# [*daemon_group*]
+#   Override the daemon group.
 #
 class fluentd (
   $config_version            = $::fluentd::params::config_version,
