@@ -78,6 +78,7 @@ fluentd::match { 'forward':
     ],
   },
 }
+```
 
 ...creates the following files:
 
@@ -141,7 +142,7 @@ fluentd::source { 'rsyslog':
 
 An array of configurations implies type "copy".
 
-````
+```
 $logger=[ { 'host' => 'logger-sample01', 'port' => '24224'},
           { 'host' => 'logger-example01', 'port' => '24224', 'standby' => ''} ]
 
