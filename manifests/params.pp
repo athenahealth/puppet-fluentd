@@ -7,8 +7,8 @@ class fluentd::params {
   # config
   $config_version            = '1'
   $config_dir                = '/etc/td-agent'
-  $config_dir_d              = '/etc/td-agent/config.d'
-  $config_name               = '/etc/td-agent/td-agent.conf'
+  $config_dir_d              = "${config_dir}/config.d"
+  $config_name               = "${config_dir}/td-agent.conf"
   $config_dir_d_purge        = true
   $config_dir_d_purge_ignore = undef
   
