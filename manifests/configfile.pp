@@ -8,8 +8,8 @@ define fluentd::configfile(
 ) {
   $base_name     = "${name}.conf"
   $conf_name     = "${priority}-${base_name}"
-  $conf_path     = "${fluentd::config_dir_d}${conf_name}"
-  $wildcard_path = "${fluentd::config_dir_d}*-${base_name}"
+  $conf_path     = "${fluentd::config_dir_d}/${conf_name}"
+  $wildcard_path = "${fluentd::config_dir_d}/*-${base_name}"
 
   file { $conf_path:
     ensure  => $ensure,
