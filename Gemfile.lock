@@ -164,6 +164,7 @@ GEM
     rspec-support (3.8.0)
     rsync (1.0.9)
     ruby_dep (1.5.0)
+    semantic_puppet (1.0.2)
     serverspec (2.41.3)
       multi_json
       rspec (~> 3.0)
@@ -211,6 +212,7 @@ DEPENDENCIES
   puppetlabs_spec_helper
   rake
   rspec-puppet!
+  semantic_puppet
   travis
   travis-lint
   vagrant-wrapper

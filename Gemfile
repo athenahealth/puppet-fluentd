@@ -5,6 +5,10 @@ group :test do
   gem "puppet", ENV['PUPPET_VERSION'] || '~> 3.7.0'
   gem "rspec-puppet", :git => 'https://github.com/rodjek/rspec-puppet.git'
   gem "metadata-json-lint"
+  gem "semantic_puppet" # per metadata-json-lint:
+                        # For the most accurate results, the semantic_puppet
+                        # gem should be included within your Gemfile if you
+                        # use Puppet <= 4.8.x
   gem "puppetlabs_spec_helper"
 end
 
